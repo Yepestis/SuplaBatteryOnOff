@@ -226,18 +226,12 @@ namespace SuplaBatteryOnOff
                 }
         }
 
-        private void notifyIconTray_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            Show();
-            this.WindowState = FormWindowState.Normal;
-            notifyIconTray.Visible = false;
-        }
-
         private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (!allowClose)
             {
                 e.Cancel = true;
+                notifyIconTray.Visible = true;
                 Hide();
             }
         }
@@ -265,5 +259,20 @@ namespace SuplaBatteryOnOff
             FormAbout formAbout = new FormAbout();
             formAbout.ShowDialog();
         }
+
+        private void notifyIconTray_MouseClick(object sender, MouseEventArgs e)
+        {
+            Show();
+            this.WindowState = FormWindowState.Normal;
+            notifyIconTray.Visible = false;
+        }
+
+        private void notifyIconTray_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            Show();
+            this.WindowState = FormWindowState.Normal;
+            notifyIconTray.Visible = false;
+        }
+
     }
 }
