@@ -1,0 +1,9 @@
+C:\Users\Krzysiek\source\repos\SuplaBatteryOnOff\SuplaBatteryOnOff\bin\Release\SuplaBatteryOnOff.exe.config
+C:\Users\Krzysiek\source\repos\SuplaBatteryOnOff\SuplaBatteryOnOff\bin\Release\SuplaBatteryOnOff.exe
+C:\Users\Krzysiek\source\repos\SuplaBatteryOnOff\SuplaBatteryOnOff\bin\Release\SuplaBatteryOnOff.pdb
+C:\Users\Krzysiek\source\repos\SuplaBatteryOnOff\SuplaBatteryOnOff\obj\Release\SuplaBatteryOnOff.FormMain.resources
+C:\Users\Krzysiek\source\repos\SuplaBatteryOnOff\SuplaBatteryOnOff\obj\Release\SuplaBatteryOnOff.Properties.Resources.resources
+C:\Users\Krzysiek\source\repos\SuplaBatteryOnOff\SuplaBatteryOnOff\obj\Release\SuplaBatteryOnOff.csproj.GenerateResource.cache
+C:\Users\Krzysiek\source\repos\SuplaBatteryOnOff\SuplaBatteryOnOff\obj\Release\SuplaBatteryOnOff.csproj.CoreCompileInputs.cache
+C:\Users\Krzysiek\source\repos\SuplaBatteryOnOff\SuplaBatteryOnOff\obj\Release\SuplaBatteryOnOff.exe
+C:\Users\Krzysiek\source\repos\SuplaBatteryOnOff\SuplaBatteryOnOff\obj\Release\SuplaBatteryOnOff.pdb
