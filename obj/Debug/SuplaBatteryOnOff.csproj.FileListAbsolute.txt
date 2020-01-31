@@ -8,3 +8,4 @@ C:\Users\Krzysiek\source\repos\SuplaBatteryOnOff\SuplaBatteryOnOff\obj\Debug\Sup
 C:\Users\Krzysiek\source\repos\SuplaBatteryOnOff\SuplaBatteryOnOff\obj\Debug\SuplaBatteryOnOff.exe
 C:\Users\Krzysiek\source\repos\SuplaBatteryOnOff\SuplaBatteryOnOff\obj\Debug\SuplaBatteryOnOff.pdb
 C:\Users\Krzysiek\source\repos\SuplaBatteryOnOff\SuplaBatteryOnOff\bin\Debug\SuplaBatteryOnOff.pdb
+C:\Users\Krzysiek\source\repos\SuplaBatteryOnOff\SuplaBatteryOnOff\obj\Debug\SuplaBatteryOnOff.csprojAssemblyReference.cache
