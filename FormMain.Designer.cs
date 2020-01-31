@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.buttonTestOn = new System.Windows.Forms.Button();
             this.buttonTestOff = new System.Windows.Forms.Button();
             this.labelDirectLinkOn = new System.Windows.Forms.Label();
@@ -57,11 +58,15 @@
             this.labelBatteryActionOff = new System.Windows.Forms.Label();
             this.labelBatteryActionOn = new System.Windows.Forms.Label();
             this.timerDirectLink = new System.Windows.Forms.Timer(this.components);
+            this.notifyIconTray = new System.Windows.Forms.NotifyIcon(this.components);
+            this.groupBoxSettings = new System.Windows.Forms.GroupBox();
+            this.checkBoxMinimalizeOnStart = new System.Windows.Forms.CheckBox();
             this.menuStripMain.SuspendLayout();
             this.groupBoxBatteryInfo.SuspendLayout();
             this.groupBoxAction.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownBatteryActionOff)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownBatteryActionOn)).BeginInit();
+            this.groupBoxSettings.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonTestOn
@@ -108,6 +113,7 @@
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // textBoxDirectLinkOn
             // 
@@ -160,7 +166,7 @@
             this.groupBoxBatteryInfo.Controls.Add(this.textBoxChargeStatus);
             this.groupBoxBatteryInfo.Controls.Add(this.labelCharge);
             this.groupBoxBatteryInfo.Controls.Add(this.label1);
-            this.groupBoxBatteryInfo.Location = new System.Drawing.Point(15, 28);
+            this.groupBoxBatteryInfo.Location = new System.Drawing.Point(15, 35);
             this.groupBoxBatteryInfo.Name = "groupBoxBatteryInfo";
             this.groupBoxBatteryInfo.Size = new System.Drawing.Size(189, 228);
             this.groupBoxBatteryInfo.TabIndex = 8;
@@ -248,16 +254,16 @@
             this.groupBoxAction.Controls.Add(this.numericUpDownBatteryActionOn);
             this.groupBoxAction.Controls.Add(this.labelBatteryActionOff);
             this.groupBoxAction.Controls.Add(this.labelBatteryActionOn);
-            this.groupBoxAction.Location = new System.Drawing.Point(210, 28);
+            this.groupBoxAction.Location = new System.Drawing.Point(210, 35);
             this.groupBoxAction.Name = "groupBoxAction";
-            this.groupBoxAction.Size = new System.Drawing.Size(273, 228);
+            this.groupBoxAction.Size = new System.Drawing.Size(183, 228);
             this.groupBoxAction.TabIndex = 9;
             this.groupBoxAction.TabStop = false;
             this.groupBoxAction.Text = "Action";
             // 
             // buttonActionStop
             // 
-            this.buttonActionStop.Location = new System.Drawing.Point(175, 181);
+            this.buttonActionStop.Location = new System.Drawing.Point(51, 181);
             this.buttonActionStop.Name = "buttonActionStop";
             this.buttonActionStop.Size = new System.Drawing.Size(75, 36);
             this.buttonActionStop.TabIndex = 2;
@@ -267,7 +273,7 @@
             // 
             // buttonActionStart
             // 
-            this.buttonActionStart.Location = new System.Drawing.Point(9, 181);
+            this.buttonActionStart.Location = new System.Drawing.Point(9, 142);
             this.buttonActionStart.Name = "buttonActionStart";
             this.buttonActionStart.Size = new System.Drawing.Size(160, 36);
             this.buttonActionStart.TabIndex = 1;
@@ -324,11 +330,40 @@
             this.timerDirectLink.Interval = 60000;
             this.timerDirectLink.Tick += new System.EventHandler(this.timerDirectLink_Tick);
             // 
+            // notifyIconTray
+            // 
+            this.notifyIconTray.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIconTray.Icon")));
+            this.notifyIconTray.Text = "Supla Battery On Off";
+            this.notifyIconTray.Visible = true;
+            this.notifyIconTray.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIconTray_MouseDoubleClick);
+            // 
+            // groupBoxSettings
+            // 
+            this.groupBoxSettings.Controls.Add(this.checkBoxMinimalizeOnStart);
+            this.groupBoxSettings.Location = new System.Drawing.Point(399, 35);
+            this.groupBoxSettings.Name = "groupBoxSettings";
+            this.groupBoxSettings.Size = new System.Drawing.Size(215, 228);
+            this.groupBoxSettings.TabIndex = 12;
+            this.groupBoxSettings.TabStop = false;
+            this.groupBoxSettings.Text = "Settings";
+            // 
+            // checkBoxMinimalizeOnStart
+            // 
+            this.checkBoxMinimalizeOnStart.AutoSize = true;
+            this.checkBoxMinimalizeOnStart.Location = new System.Drawing.Point(7, 20);
+            this.checkBoxMinimalizeOnStart.Name = "checkBoxMinimalizeOnStart";
+            this.checkBoxMinimalizeOnStart.Size = new System.Drawing.Size(116, 17);
+            this.checkBoxMinimalizeOnStart.TabIndex = 0;
+            this.checkBoxMinimalizeOnStart.Text = "Minimize on startup";
+            this.checkBoxMinimalizeOnStart.UseVisualStyleBackColor = true;
+            this.checkBoxMinimalizeOnStart.CheckedChanged += new System.EventHandler(this.checkBoxMinimalizeOnStart_CheckedChanged);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(626, 412);
+            this.Controls.Add(this.groupBoxSettings);
             this.Controls.Add(this.groupBoxAction);
             this.Controls.Add(this.groupBoxBatteryInfo);
             this.Controls.Add(this.labelDirectLinkOff);
@@ -341,8 +376,10 @@
             this.MainMenuStrip = this.menuStripMain;
             this.Name = "FormMain";
             this.ShowIcon = false;
-            this.Text = "Supla Battery On Off";
+            this.Text = "Supla Battery On Off - Direct Links";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
             this.Load += new System.EventHandler(this.FormMain_Load);
+            this.Resize += new System.EventHandler(this.FormMain_Resize);
             this.menuStripMain.ResumeLayout(false);
             this.menuStripMain.PerformLayout();
             this.groupBoxBatteryInfo.ResumeLayout(false);
@@ -351,6 +388,8 @@
             this.groupBoxAction.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownBatteryActionOff)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownBatteryActionOn)).EndInit();
+            this.groupBoxSettings.ResumeLayout(false);
+            this.groupBoxSettings.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -386,6 +425,9 @@
         private System.Windows.Forms.Label labelBatteryActionOff;
         private System.Windows.Forms.Label labelBatteryActionOn;
         private System.Windows.Forms.Timer timerDirectLink;
+        private System.Windows.Forms.NotifyIcon notifyIconTray;
+        private System.Windows.Forms.GroupBox groupBoxSettings;
+        private System.Windows.Forms.CheckBox checkBoxMinimalizeOnStart;
     }
 }
 

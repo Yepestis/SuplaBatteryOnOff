@@ -70,5 +70,17 @@ namespace SuplaBatteryOnOff.Properties {
                 this["directLinkOff"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool minimalizeOnStart {
+            get {
+                return ((bool)(this["minimalizeOnStart"]));
+            }
+            set {
+                this["minimalizeOnStart"] = value;
+            }
+        }
     }
 }
